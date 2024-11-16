@@ -11,4 +11,4 @@ necesita nodejs y npm para funcionar - si ya tienes node, ya tienes npm
 - el usuario es admin pass admin
 - el tiempo de session es de 1hora, luego pide loguear de nuevo...
 
-revisala y no te loquees tanto
+revisala y no te aloques tanto queriendo hacerla a la mala... con librerias me tomo como 5 horas
