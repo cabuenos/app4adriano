@@ -1,13 +1,10 @@
 const express = require('express')
 const path = require('path');
-const cookieParser = require('cookie-parser');
 const cors = require('cors')
 
 
 const session = require('./utils/session');
 
-const cookie_routes = require('./routes/cookies')
-const sesion_routes = require('./routes/session')
 const auth_routes = require('./routes/auth')
 const user_routes = require('./routes/user')
 const home_routes = require('./routes/home')
