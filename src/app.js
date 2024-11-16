@@ -6,7 +6,6 @@ const cors = require('cors')
 const session = require('./utils/session');
 
 const auth_routes = require('./routes/auth')
-const user_routes = require('./routes/user')
 const home_routes = require('./routes/home')
 const account_routes = require('./routes/accounts')
 
@@ -23,7 +22,6 @@ app.use(session)
 
 app.use('/', home_routes)
 app.use('/auth', auth_routes)
-app.use('/user', user_routes)
 app.use('/accounts', account_routes)
 
 
