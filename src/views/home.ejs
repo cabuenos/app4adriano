@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <%- include("navigation") %>
+    <h1>Bienvenido, <%= session.user.name %>!... Ctm </h1>
+    <form method="POST" action="/auth/logout">
+      <button class="border-10 rounded-md bg-blue-500 " type="submit">Cerrar Sesión</button>
+    </form>
+    tambien puedes ir al nombre de usuario arriba a la derecha y cerrar sesión
+</body>
+</html>

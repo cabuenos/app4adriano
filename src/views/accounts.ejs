@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Accounts</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <%- include("navigation") %>
+    <% if (newUser){ %>
+        <div class="w-full bg-blue-500">
+            <h4 class="text-white text-center">Nuevo usuario: <%= newUser.first_name %> <%= newUser.last_name %> creado<h4>
+        </div>
+    <% } %>
+
+    <form action="/accounts/create" method="POST">
+        <div class="grid grid-rows-1">
+            <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 m-8">
+                <div class="pb-8 ">
+                    <h2 class="text-base/7 font-semibold text-gray-900">Datos Personales del trabajador</h2>
+            
+                    <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+                    <div class="sm:col-span-3">
+                        <label for="first_name" class="block text-sm/6 font-medium text-gray-900">Nombres</label>
+                        <div class="mt-2">
+                        <input type="text" name="first_name" id="first_name" autocomplete="given-name" class="pl-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6" required placeholder="Nombres">
+                        </div>
+                    </div>
+            
+                    <div class="sm:col-span-3">
+                        <label for="last_name" class="block text-sm/6 font-medium text-gray-900">Apellidos</label>
+                        <div class="mt-2">
+                        <input type="text" name="last_name" id="last_name" autocomplete="last-name" class="pl-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6" required placeholder="Apellidos">
+                        </div>
+                    </div>
+            
+                    <div class="sm:col-span-4">
+                        <label for="email" class="block text-sm/6 font-medium text-gray-900">Correo Personal</label>
+                        <div class="mt-2">
+                        <input id="email" name="email" type="email" autocomplete="e-mail" class="pl-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6" required placeholder="mail@domain.me">
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="pb-8 ">
+                    <h2 class="text-base/7 font-semibold text-gray-900">Datos del puesto de trabajo</h2>
+            
+                    <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+                    <div class="sm:col-span-3">
+                        <label for="position" class="block text-sm/6 font-medium text-gray-900">Cargo</label>
+                        <div class="mt-2">
+                        <input type="text" name="position" id="position" autocomplete="position" class="pl-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6" required placeholder="Cargo">
+                        </div>
+                    </div>
+            
+                    <div class="sm:col-span-3">
+                        <label for="area" class="block text-sm/6 font-medium text-gray-900">Area</label>
+                        <div class="mt-2">
+                        <input type="text" name="area" id="area" autocomplete="area" class="pl-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6" required placeholder="Area">
+                        </div>
+                    </div>
+
+                    <div class="sm:col-span-3">
+                        <label for="business_unit" class="block text-sm/6 font-medium text-gray-900">Unidad de negocio</label>
+                        <div class="mt-2">
+                        <input type="text" name="business_unit" id="business_unit" autocomplete="business_unit" class="pl-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6" required placeholder="Unidad de negocio">
+                        </div>
+                    </div>
+            
+                    <div class="sm:col-span-3">
+                        <label for="client" class="block text-sm/6 font-medium text-gray-900">Cliente</label>
+                        <div class="mt-2">
+                        <input type="text" name="client" id="client" autocomplete="client" class="pl-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6" required placeholder="Cliente">
+                        </div>
+                    </div>
+            
+                    </div>
+                </div>
+            </div>
+            <!-- ESTA PARTE ESTA REPETIDA - CORRIGELA -->
+            <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 m-8">
+                <div class="pb-8 ">
+                    <h2 class="text-base/7 font-semibold text-gray-900">Datos Personales del trabajador (ESTA PARTE ESTA REPETIDA - CORRIGELA)</h2>
+            
+                    <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+                    <div class="sm:col-span-3">
+                        <label for="first_name" class="block text-sm/6 font-medium text-gray-900">Nombres</label>
+                        <div class="mt-2">
+                        <input type="text" name="first_name" id="first_name" autocomplete="given-name" class="pl-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6" required placeholder="Nombres">
+                        </div>
+                    </div>
+            
+                    <div class="sm:col-span-3">
+                        <label for="last_name" class="block text-sm/6 font-medium text-gray-900">Apellidos</label>
+                        <div class="mt-2">
+                        <input type="text" name="last_name" id="last_name" autocomplete="last_name" class="pl-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6" required placeholder="Apellidos">
+                        </div>
+                    </div>
+            
+                    <div class="sm:col-span-4">
+                        <label for="email" class="block text-sm/6 font-medium text-gray-900">Correo Personal</label>
+                        <div class="mt-2">
+                        <input id="email" name="email" type="email" autocomplete="email" class="pl-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6" required placeholder="mail@domain.me">
+                        </div>
+                    </div>
+                    </div>
+                </div>
+
+                <div class="pb-8 ">
+                    <h2 class="text-base/7 font-semibold text-gray-900">Outputs</h2>
+                    <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">    
+                        <div class="col-span-full">
+                            <div class="mt-2">
+                            <textarea id="outputs" name="outputs" rows="4" aria-multiline="true" class="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm/6" placeholder="escribe aqui"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="">
+            <div class="mt-6 flex items-center justify-center gap-x-6">
+                <button type="submit" class="rounded-md bg-blue-700 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Save</button>
+            </div>
+        </div>
+    </form>
+  
+</body>
+</html>
